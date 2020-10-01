@@ -27,33 +27,49 @@ class _StoryAppState extends State<StoryApp> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('images/background.png'),
-                  fit: BoxFit.cover)),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(child: Center(child: Text(widget.story))),
-              buildButton(),
-              buildButton()
-            ],
-          ),
+      child: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                // colorFilter:
+                //     ColorFilter.mode(Colors., BlendMode.colorBurn),
+                image: AssetImage('images/background.jpg'),
+                fit: BoxFit.cover)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+                child: Center(
+                    child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                widget.story,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.blueGrey.shade200,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 25),
+              ),
+            ))),
+            buildButton(),
+            buildButton()
+          ],
         ),
       ),
     );
   }
 
-  Container buildButton() {
-    return Container(
-      height: 60,
-      child: FlatButton(
-        color: Colors.red,
-        onPressed: () {},
-        child: Text("King went to market"),
+  Padding buildButton() {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Container(
+        height: 47,
+        child: FlatButton(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          color: Colors.white54,
+          onPressed: () {},
+          child: Text("King went to market"),
+        ),
       ),
     );
   }
