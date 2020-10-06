@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class NetworkHelper {
-  static const api_key = 'e076c83c6f1848768bb98d0bc2d0db9c';
+  static const api_key = '';
   static const url = 'http://newsapi.org/v2/top-headlines';
   String newsUrl = '$url?country=in&apiKey=$api_key';
   Future<dynamic> getNews() async {
